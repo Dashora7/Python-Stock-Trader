@@ -51,7 +51,5 @@ def load_tweets(name):
     tweet_list = []
     for tweet in tweepy.Cursor(api.search, q=name, lang='en').items(300):
         tweet_list.append(json.loads(json.dumps(tweet._json))['text'])
-    
-    print(tweet_list)
     return tweet_list
 
