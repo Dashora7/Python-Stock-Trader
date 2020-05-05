@@ -6,7 +6,6 @@ Created on Mon May  4 15:46:33 2020
 """
 from textblob import TextBlob
 from statistics import mean
-#import time
 try:
     import json
 except ImportError:
@@ -55,11 +54,4 @@ def load_tweets(name):
     
     print(tweet_list)
     return tweet_list
-
-
-'''
-tweet_list = load_tweets(['#GOOGL OR Alphabet Inc. OR Google Stock OR GOOGL Stocks'])
-print(tweet_list)
-print(check_sentiment(tweet_list))
-'''
 
