@@ -7,6 +7,7 @@ Created on Wed May  6 10:26:32 2020
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+import pickle
 
 def get_sentdex_main_data(ticker):
     response = requests.get('http://sentdex.com/financial-analysis/')
@@ -24,6 +25,22 @@ def get_sentdex_main_data(ticker):
     return {'volume': ser['all Volume of Mentions'].tolist()[0], 'sentiment': ser['all Overall Sentiment'].tolist()[0],
             'history': ser['history'].tolist()[0]}
 
-print(get_sentdex_main_data('AAPL'))
+def save_sp500_tickers():
+    resp = requests.get('http://en.wikipedia.org/wiki/List_of_S%26P_500_companies')
+    soup = BeautifulSoup(resp.text, 'lxml')
+    table = soup.find('table', {'class': 'wikitable sortable'})
+    tickers = []
+    for row in table.findAll('tr')[1:]:
+        ticker = row.findAll('td')[0].text
+        ticker = ticker.strip()
+        if '.' in ticker:
+            a, b = ticker.split('.')
+            ticker = a+'-'+b
+        tickers.append(ticker)
 
+    with open("data//sp500tickers.pickle", "wb") as f:
+        pickle.dump(tickers, f)
 
+    return tickers
+
+save_sp500_tickers()

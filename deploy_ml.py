@@ -1,6 +1,19 @@
-import technical_acquisition_methods as tam
+from sklearn.ensemble import GradientBoostingRegressor
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import VotingRegressor
+from sklearn.model_selection import train_test_split
+import pandas as pd
+import numpy as np
 
+df_weekly = pd.read_csv('data//tech_df')
 
+df_weekly.replace([np.inf, -np.inf], np.nan)
+
+df_weekly.dropna(inplace=True)
+df_weekly.drop(columns='Unnamed: 0', inplace=True)
+
+print(df_weekly.columns)
 
 features = df_weekly[['open', 'high', 'low', 'close', 'adx', 'aroon', 'macd', 'rsi', 'stoch', 'obv', 'ma_50', 'current_close_pct_change']].values
 labels = df_weekly['future_close_pct_change'].values

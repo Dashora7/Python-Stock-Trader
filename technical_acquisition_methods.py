@@ -7,12 +7,6 @@ import pandas as pd
 import pandas_datareader.data as web
 import ta
 '''
-from sklearn.ensemble import GradientBoostingRegressor
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.linear_model import LinearRegression
-from sklearn.ensemble import VotingRegressor
-from sklearn.model_selection import train_test_split
-
 quandl.ApiConfig.api_key = 'exUkGQLmC9_T8J1TU3Xz'
 fm = '07a2e7ec7eaf928f2a35b6e904281ba5'
 '''
