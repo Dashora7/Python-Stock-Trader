@@ -6,7 +6,6 @@ Created on Mon May  4 15:46:33 2020
 """
 from textblob import TextBlob
 from statistics import mean
-#import time
 try:
     import json
 except ImportError:
