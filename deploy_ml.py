@@ -1,3 +1,5 @@
+import technical_acquisition_methods as tam
+
 
 
 features = df_weekly[['open', 'high', 'low', 'close', 'adx', 'aroon', 'macd', 'rsi', 'stoch', 'obv', 'ma_50', 'current_close_pct_change']].values
