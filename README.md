@@ -1,2 +1,2 @@
-# Python-Stock-Trader
+# Python-Stock-Trader (UNFINISHED)
 A Python-based stock trading analyzation and decision-making tool
