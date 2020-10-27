@@ -7,8 +7,8 @@ import pandas as pd
 import pandas_datareader.data as web
 import ta
 '''
-quandl.ApiConfig.api_key = 'exUkGQLmC9_T8J1TU3Xz'
-fm = '07a2e7ec7eaf928f2a35b6e904281ba5'
+quandl.ApiConfig.api_key = 'exUkGQLmC9_***'
+fm = '07a2e7ec***'
 '''
 
 '''
